@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Text decoration</title>
+
+	<style>
+		body {
+			font-size: 14px;
+		}
+
+		.column {
+			margin: 0 20px;
+		}
+	</style>
+
+	<style>
+		#not-prefixed .legacy {
+			text-decoration: line-through;
+		}
+
+		#not-prefixed .legacy.override-legacy {
+			text-decoration: overline;
+		}
+
+		#not-prefixed .legacy.override-shorthand {
+			text-decoration: overline blue;
+		}
+
+		#not-prefixed .legacy.override-longhand {
+			text-decoration-color: blue;
+			text-decoration-line: overline;
+		}
+
+		#not-prefixed .shorthand {
+			text-decoration: line-through red;
+		}
+
+		#not-prefixed .shorthand.override-legacy {
+			text-decoration: overline;
+		}
+
+		#not-prefixed .shorthand.override-shorthand {
+			text-decoration: overline blue;
+		}
+
+		#not-prefixed .shorthand.override-longhand {
+			text-decoration-color: blue;
+			text-decoration-line: overline;
+		}
+
+		#not-prefixed .longhand {
+			text-decoration-line: line-through;
+			text-decoration-color: red;
+		}
+
+		#not-prefixed .longhand.override-legacy {
+			text-decoration: overline;
+		}
+
+		#not-prefixed .longhand.override-shorthand {
+			text-decoration: overline blue;
+		}
+
+		#not-prefixed .longhand.override-longhand {
+			text-decoration-color: blue;
+			text-decoration-line: overline;
+		}
+	</style>
+
+	<style>
+		#prefixed .legacy {
+			text-decoration: line-through;
+		}
+
+		#prefixed .legacy.override-legacy {
+			text-decoration: overline;
+		}
+
+		#prefixed .legacy.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			        text-decoration: overline blue;
+		}
+
+		#prefixed .legacy.override-longhand {
+			-webkit-text-decoration-color: blue;
+			        text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			        text-decoration-line: overline;
+		}
+
+		#prefixed .shorthand {
+			-webkit-text-decoration: line-through red;
+			        text-decoration: line-through red;
+		}
+
+		#prefixed .shorthand.override-legacy {
+			text-decoration: overline;
+		}
+
+		#prefixed .shorthand.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			        text-decoration: overline blue;
+		}
+
+		#prefixed .shorthand.override-longhand {
+			-webkit-text-decoration-color: blue;
+			        text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			        text-decoration-line: overline;
+		}
+
+		#prefixed .longhand {
+			-webkit-text-decoration-line: line-through;
+			        text-decoration-line: line-through;
+			-webkit-text-decoration-color: red;
+			        text-decoration-color: red;
+		}
+
+		#prefixed .longhand.override-legacy {
+			text-decoration: overline;
+		}
+
+		#prefixed .longhand.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			        text-decoration: overline blue;
+		}
+
+		#prefixed .longhand.override-longhand {
+			-webkit-text-decoration-color: blue;
+			        text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			        text-decoration-line: overline;
+		}
+	</style>
+
+	<style>
+		#prefixed-with-patch .legacy {
+			-webkit-text-decoration: line-through;
+			text-decoration: line-through;
+		}
+	
+		#prefixed-with-patch .legacy.override-legacy {
+			-webkit-text-decoration: overline;
+			text-decoration: overline;
+		}
+	
+		#prefixed-with-patch .legacy.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			text-decoration: overline blue;
+		}
+	
+		#prefixed-with-patch .legacy.override-longhand {
+			-webkit-text-decoration-color: blue;
+			text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			text-decoration-line: overline;
+		}
+	
+		#prefixed-with-patch .shorthand {
+			-webkit-text-decoration: line-through red;
+			text-decoration: line-through red;
+		}
+	
+		#prefixed-with-patch .shorthand.override-legacy {
+			-webkit-text-decoration: overline;
+			text-decoration: overline;
+		}
+	
+		#prefixed-with-patch .shorthand.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			text-decoration: overline blue;
+		}
+	
+		#prefixed-with-patch .shorthand.override-longhand {
+			-webkit-text-decoration-color: blue;
+			text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			text-decoration-line: overline;
+		}
+	
+		#prefixed-with-patch .longhand {
+			-webkit-text-decoration-line: line-through;
+			text-decoration-line: line-through;
+			-webkit-text-decoration-color: red;
+			text-decoration-color: red;
+		}
+	
+		#prefixed-with-patch .longhand.override-legacy {
+			-webkit-text-decoration: overline;
+			text-decoration: overline;
+		}
+	
+		#prefixed-with-patch .longhand.override-shorthand {
+			-webkit-text-decoration: overline blue;
+			text-decoration: overline blue;
+		}
+	
+		#prefixed-with-patch .longhand.override-longhand {
+			-webkit-text-decoration-color: blue;
+			text-decoration-color: blue;
+			-webkit-text-decoration-line: overline;
+			text-decoration-line: overline;
+		}
+	</style>
+</head>
+<body>
+	<h1>Text decoration</h1>
+
+	<div style="display: flex; flex-wrap: wrap;">
+		<div class="column">
+			<h2>Not prefixed</h2>
+			<div id="not-prefixed">
+				<h3>Text decoration legacy property</h3>
+				<p class="legacy">
+					No overrides.
+				</p>
+					
+				<p class="legacy override-legacy">
+					Override with legacy.
+				</p>
+
+				<p class="legacy override-shorthand">
+					Override with shorthand.
+				</p>
+
+				<p class="legacy override-longhand">
+					Override with longhand.
+				</p>
+				
+				<h3>Text decoration shorthand property</h3>
+				<p class="shorthand">
+					No overrides.
+				</p>
+				
+				<p class="shorthand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="shorthand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="shorthand override-longhand">
+					Override with longhand.
+				</p>
+
+				<h3>Text decoration longhand property</h3>
+				<p class="longhand">
+					No overrides.
+				</p>
+				
+				<p class="longhand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="longhand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="longhand override-longhand">
+					Override with longhand.
+				</p>
+			</div>
+		</div>
+
+		<div class="column">
+			<h2>Prefixed</h2>
+			<div id="prefixed">
+				<h3>Text decoration legacy property</h3>
+				<p class="legacy">
+					No overrides.
+				</p>
+					
+				<p class="legacy override-legacy">
+					Override with legacy.
+				</p>
+
+				<p class="legacy override-shorthand">
+					Override with shorthand.
+				</p>
+
+				<p class="legacy override-longhand">
+					Override with longhand.
+				</p>
+				
+				<h3>Text decoration shorthand property</h3>
+				<p class="shorthand">
+					No overrides.
+				</p>
+				
+				<p class="shorthand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="shorthand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="shorthand override-longhand">
+					Override with longhand.
+				</p>
+
+				<h3>Text decoration longhand property</h3>
+				<p class="longhand">
+					No overrides.
+				</p>
+				
+				<p class="longhand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="longhand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="longhand override-longhand">
+					Override with longhand.
+				</p>
+			</div>
+		</div>
+
+		<div class="column">
+			<h2>Prefixed with patch</h2>
+			<div id="prefixed-with-patch">
+				<h3>Text decoration legacy property</h3>
+				<p class="legacy">
+					No overrides.
+				</p>
+					
+				<p class="legacy override-legacy">
+					Override with legacy.
+				</p>
+
+				<p class="legacy override-shorthand">
+					Override with shorthand.
+				</p>
+
+				<p class="legacy override-longhand">
+					Override with longhand.
+				</p>
+				
+				<h3>Text decoration shorthand property</h3>
+				<p class="shorthand">
+					No overrides.
+				</p>
+				
+				<p class="shorthand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="shorthand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="shorthand override-longhand">
+					Override with longhand.
+				</p>
+
+				<h3>Text decoration longhand property</h3>
+				<p class="longhand">
+					No overrides.
+				</p>
+				
+				<p class="longhand override-legacy">
+					Override with legacy.
+				</p>
+				
+				<p class="longhand override-shorthand">
+					Override with shorthand.
+				</p>
+				
+				<p class="longhand override-longhand">
+					Override with longhand.
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
