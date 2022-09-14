@@ -12,7 +12,6 @@
 		}
 	</style>
 
-	<!--
 	<style>
 		#not-prefixed .legacy {
 			text-decoration: line-through;
@@ -66,7 +65,6 @@
 			text-decoration-line: overline;
 		}
 	</style>
-	-->
 
 	<style>
 		#prefixed .legacy {
@@ -79,18 +77,22 @@
 
 		#prefixed .legacy.override-shorthand {
 			-webkit-text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
 			        text-decoration: overline blue;
 		}
 
 		#prefixed .legacy.override-longhand {
 			-webkit-text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
 			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
 			        text-decoration-line: overline;
 		}
 
 		#prefixed .shorthand {
 			-webkit-text-decoration: line-through red;
+			   -moz-text-decoration: line-through red;
 			        text-decoration: line-through red;
 		}
 
@@ -100,20 +102,25 @@
 
 		#prefixed .shorthand.override-shorthand {
 			-webkit-text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
 			        text-decoration: overline blue;
 		}
 
 		#prefixed .shorthand.override-longhand {
 			-webkit-text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
 			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
 			        text-decoration-line: overline;
 		}
 
 		#prefixed .longhand {
 			-webkit-text-decoration-line: line-through;
+			   -moz-text-decoration-line: line-through;
 			        text-decoration-line: line-through;
 			-webkit-text-decoration-color: red;
+			   -moz-text-decoration-color: red;
 			        text-decoration-color: red;
 		}
 
@@ -123,13 +130,16 @@
 
 		#prefixed .longhand.override-shorthand {
 			-webkit-text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
 			        text-decoration: overline blue;
 		}
 
 		#prefixed .longhand.override-longhand {
 			-webkit-text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
 			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
 			        text-decoration-line: overline;
 		}
 	</style>
@@ -139,68 +149,80 @@
 			-webkit-text-decoration: line-through;
 			text-decoration: line-through;
 		}
-	
+
 		#prefixed-with-patch .legacy.override-legacy {
 			-webkit-text-decoration: overline;
 			text-decoration: overline;
 		}
-	
+
 		#prefixed-with-patch .legacy.override-shorthand {
 			-webkit-text-decoration: overline blue;
-			text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
+			        text-decoration: overline blue;
 		}
-	
+
 		#prefixed-with-patch .legacy.override-longhand {
 			-webkit-text-decoration-color: blue;
-			text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
+			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
-			text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
+			        text-decoration-line: overline;
 		}
-	
+
 		#prefixed-with-patch .shorthand {
 			-webkit-text-decoration: line-through red;
-			text-decoration: line-through red;
+			   -moz-text-decoration: line-through red;
+			        text-decoration: line-through red;
 		}
-	
+
 		#prefixed-with-patch .shorthand.override-legacy {
 			-webkit-text-decoration: overline;
 			text-decoration: overline;
 		}
-	
+
 		#prefixed-with-patch .shorthand.override-shorthand {
 			-webkit-text-decoration: overline blue;
-			text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
+			        text-decoration: overline blue;
 		}
-	
+
 		#prefixed-with-patch .shorthand.override-longhand {
 			-webkit-text-decoration-color: blue;
-			text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
+			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
-			text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
+			        text-decoration-line: overline;
 		}
-	
+
 		#prefixed-with-patch .longhand {
 			-webkit-text-decoration-line: line-through;
-			text-decoration-line: line-through;
+			   -moz-text-decoration-line: line-through;
+			        text-decoration-line: line-through;
 			-webkit-text-decoration-color: red;
-			text-decoration-color: red;
+			   -moz-text-decoration-color: red;
+			        text-decoration-color: red;
 		}
-	
+
 		#prefixed-with-patch .longhand.override-legacy {
 			-webkit-text-decoration: overline;
 			text-decoration: overline;
 		}
-	
+
 		#prefixed-with-patch .longhand.override-shorthand {
 			-webkit-text-decoration: overline blue;
-			text-decoration: overline blue;
+			   -moz-text-decoration: overline blue;
+			        text-decoration: overline blue;
 		}
-	
+
 		#prefixed-with-patch .longhand.override-longhand {
 			-webkit-text-decoration-color: blue;
-			text-decoration-color: blue;
+			   -moz-text-decoration-color: blue;
+			        text-decoration-color: blue;
 			-webkit-text-decoration-line: overline;
-			text-decoration-line: overline;
+			   -moz-text-decoration-line: overline;
+			        text-decoration-line: overline;
 		}
 	</style>
 </head>
