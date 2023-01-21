@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		p {
+			text-decoration-color: red;
+		}
+
+		p.broken {
+			text-decoration: underline;
+		}
+
+		p.fixed {
+			-webkit-text-decoration: underline;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<p>I expect to see only black underlines.</p>
+
+	<p class="broken">Broken</p>
+
+	<p class="fixed">Fixed</p>
+</body>
+</html>
